@@ -22,6 +22,5 @@ public class ChatRoomService {
 
     public List<ChatRoom> findAll() {
         return chatRoomRepository.findAll();
-
     }
 }

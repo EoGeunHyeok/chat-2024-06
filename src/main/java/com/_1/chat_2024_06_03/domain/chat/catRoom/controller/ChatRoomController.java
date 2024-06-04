@@ -8,38 +8,37 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @Controller
 @RequestMapping("/chat/room")
 @RequiredArgsConstructor
 public class ChatRoomController {
-    private final ChatRoomService chatRoomService ;
+    private final ChatRoomService chatRoomService;
+
     @GetMapping("/{roomId}")
-    @ResponseBody
     public String showRoom(
             @PathVariable("roomId") final long roomId,
-            @RequestParam(name = "writerName", defaultValue = "NoName") final String writerName
+            @RequestParam(value = "writerName", defaultValue = "NoName") final String writerName
     ) {
-        return "%d번 채팅방 입니담. writer : %s".formatted(roomId, writerName);
+        return "domain/chat/chatRoom/room";
     }
 
     @GetMapping("/make")
     public String showMake() {
         return "domain/chat/chatRoom/make";
     }
+
     @PostMapping("/make")
-    public String showMake(
-            final String name
+    public String make(
+            @RequestParam(value = "name") final String name
     ) {
         chatRoomService.make(name);
-        return "redirect:/chat/room/make?message=Chat Room Created";
+        return "redirect:/chat/room/list";
     }
 
     @GetMapping("/list")
     public String showList(Model model) {
         List<ChatRoom> chatRooms = chatRoomService.findAll();
         model.addAttribute("chatRooms", chatRooms);
-
         return "domain/chat/chatRoom/list";
     }
 }

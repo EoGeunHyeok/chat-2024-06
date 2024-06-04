@@ -21,13 +21,13 @@ import static lombok.AccessLevel.PROTECTED;
 @NoArgsConstructor(access = PROTECTED)
 public class ChatRoom {
     @Id
-    @GeneratedValue(strategy = IDENTITY) //
+    @GeneratedValue(strategy = IDENTITY)
     @Getter
     private Long id;
 
     @CreatedDate
     @Getter
-    private LocalDateTime createdDate;
+    private LocalDateTime createDate;
 
     @LastModifiedDate
     @Getter
@@ -39,5 +39,4 @@ public class ChatRoom {
     public ChatRoom(String name) {
         this.name = name;
     }
-
 }
