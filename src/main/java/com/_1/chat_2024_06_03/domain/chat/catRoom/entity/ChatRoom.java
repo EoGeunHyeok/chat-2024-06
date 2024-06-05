@@ -1,10 +1,9 @@
 package com._1.chat_2024_06_03.domain.chat.catRoom.entity;
 
+import com._1.chat_2024_06_03.domain.global.jpa.baseEntity.BaseEntity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -17,11 +16,14 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 import static lombok.AccessLevel.PROTECTED;
 
 @Entity
-@Builder
 @EntityListeners(AuditingEntityListener.class)
 @AllArgsConstructor(access = PROTECTED)
 @NoArgsConstructor(access = PROTECTED)
-public class ChatRoom {
+@SuperBuilder
+@Getter
+@Setter
+@ToString(callSuper = true)
+public class ChatRoom extends BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     @Getter
