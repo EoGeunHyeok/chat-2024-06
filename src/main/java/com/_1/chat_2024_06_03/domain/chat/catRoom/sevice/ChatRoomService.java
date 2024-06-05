@@ -1,5 +1,6 @@
 package com._1.chat_2024_06_03.domain.chat.catRoom.sevice;
 
+import com._1.chat_2024_06_03.domain.chat.catRoom.entity.ChatMessage;
 import com._1.chat_2024_06_03.domain.chat.catRoom.entity.ChatRoom;
 import com._1.chat_2024_06_03.domain.chat.catRoom.repository.ChatRoomRepository;
 import jakarta.transaction.Transactional;
@@ -34,9 +35,11 @@ public class ChatRoomService {
     }
 
     @Transactional
-    public void write(long roomId, String writerName, String content) {
+    public ChatMessage write(long roomId, String writerName, String content) {
         ChatRoom chatRoom = chatRoomRepository.findById(roomId).get();
 
-        chatRoom.writeMessage(writerName, content);
+        ChatMessage chatMessage =  chatRoom.writeMessage(writerName, content);
+
+        return chatMessage;
     }
 }

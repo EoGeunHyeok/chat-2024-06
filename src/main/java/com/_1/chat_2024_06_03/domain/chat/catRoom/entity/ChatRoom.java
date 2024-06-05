@@ -49,7 +49,7 @@ public class ChatRoom extends BaseEntity {
         this.name = name;
     }
 
-    public void writeMessage(String writerName, String content) {
+    public ChatMessage writeMessage(String writerName, String content) {
         ChatMessage chatMessage = ChatMessage
                 .builder()
                 .chatRoom(this)
@@ -57,5 +57,7 @@ public class ChatRoom extends BaseEntity {
                 .content(content)
                 .build();
         chatMessages.add(chatMessage);
+
+        return chatMessage;
     }
 }
