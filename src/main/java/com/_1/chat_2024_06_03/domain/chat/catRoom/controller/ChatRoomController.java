@@ -58,6 +58,7 @@ public class ChatRoomController {
         private String writerName;
         private String content;
     }
+
     @Getter
     @AllArgsConstructor
     public static class WriterResponseBody {
@@ -73,6 +74,21 @@ public class ChatRoomController {
         ChatMessage chatMessage = chatRoomService.write(roomId, requestBody.getWriterName(), requestBody.getContent());
 
         return RsData.of("S-1", "%d번 메세지를 작성하였습니다.".formatted(chatMessage.getId()),
-        new WriterResponseBody(chatMessage.getId()));
+                new WriterResponseBody(chatMessage.getId()));
+    }
+
+    @Getter
+    @AllArgsConstructor
+    public static class GetMessagesAfterResponseBody {
+
+    }
+
+    @PostMapping("/{roomId}/messagesAfter/{formChatMessageId}")
+    @ResponseBody
+    public RsData<GetMessagesAfterResponseBody> getMessagesAfter(
+            @PathVariable("roomId") final long roomId,
+            @PathVariable("formChatMessageId") final long formChatMessageId
+    ) {
+        return null;
     }
 }
