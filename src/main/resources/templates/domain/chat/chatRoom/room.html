@@ -85,7 +85,7 @@
             }
         ).then(response => response.json())
         .then(json => drawMoreChatMessages(json.data.messages))
-        .then(() => setTimeout(loadMoreChatMessages, 2000))
+        .then(() => setTimeout(loadMoreChatMessages, 50))
         .catch(error => alert(error));
     }
 
@@ -102,4 +102,6 @@
                 `<li>${message.writerName} : ( ${message.id} ) ${message.content}</li>`
             );
     }
+
+    loadMoreChatMessages();
 </script>
