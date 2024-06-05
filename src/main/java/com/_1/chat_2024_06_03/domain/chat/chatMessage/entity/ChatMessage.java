@@ -1,5 +1,6 @@
-package com._1.chat_2024_06_03.domain.chat.catRoom.entity;
+package com._1.chat_2024_06_03.domain.chat.chatMessage.entity;
 
+import com._1.chat_2024_06_03.domain.chat.chatRoom.entity.ChatRoom;
 import com._1.chat_2024_06_03.domain.global.jpa.baseEntity.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityListeners;
@@ -29,6 +30,9 @@ public class ChatMessage extends BaseEntity {
 
 
     private String content;
+
+
+
 
 
 }

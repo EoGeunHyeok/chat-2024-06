@@ -1,8 +1,8 @@
-package com._1.chat_2024_06_03.domain.chat.catRoom.sevice;
+package com._1.chat_2024_06_03.domain.chat.chatRoom.sevice;
 
-import com._1.chat_2024_06_03.domain.chat.catRoom.entity.ChatMessage;
-import com._1.chat_2024_06_03.domain.chat.catRoom.entity.ChatRoom;
-import com._1.chat_2024_06_03.domain.chat.catRoom.repository.ChatRoomRepository;
+import com._1.chat_2024_06_03.domain.chat.chatMessage.entity.ChatMessage;
+import com._1.chat_2024_06_03.domain.chat.chatRoom.entity.ChatRoom;
+import com._1.chat_2024_06_03.domain.chat.chatRoom.repository.ChatRoomRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com._1.chat_2024_06_03.domain.chat.catRoom.repository;
+package com._1.chat_2024_06_03.domain.chat.chatRoom.repository;
 
-import com._1.chat_2024_06_03.domain.chat.catRoom.entity.ChatRoom;
+import com._1.chat_2024_06_03.domain.chat.chatRoom.entity.ChatRoom;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

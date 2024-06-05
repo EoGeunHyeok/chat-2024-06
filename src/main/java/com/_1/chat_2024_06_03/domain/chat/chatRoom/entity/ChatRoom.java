@@ -1,6 +1,8 @@
-package com._1.chat_2024_06_03.domain.chat.catRoom.entity;
+package com._1.chat_2024_06_03.domain.chat.chatRoom.entity;
 
+import com._1.chat_2024_06_03.domain.chat.chatMessage.entity.ChatMessage;
 import com._1.chat_2024_06_03.domain.global.jpa.baseEntity.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
@@ -30,6 +32,7 @@ public class ChatRoom extends BaseEntity {
     @Getter
     @ToString.Exclude
     @OrderBy("id DESC")
+    @JsonIgnore
     private List<ChatMessage> chatMessages = new ArrayList<>();
 
     public ChatRoom(String name) {
